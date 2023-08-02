@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACES Faces</title>
+    <link rel="stylesheet" href="https://raw.githack.com/mastermedical/multipage/main/Cardiology CSS Styles.css">
+    
+</head>
+<body>
+    <header>
+    <h1>PACES Faces</h1>
+    <div class="dropdown-menu">
+        <button id="dropdownBtn">&#9776;</button>
+        <div class="dropdown-content">
+            <!-- Options in the drop-down menu -->
+            <a href="Homepage.html">Home</a>
+            <a href="#" id="darkModeOption">Dark Mode</a>
+            <a href="Cardiology.html">Cardiology</a>
+            <a href="respiratory.html">Respiratory</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="zone-container">
+        <div class="zone-left">
+            <!-- Zone 2 content goes here (Flashcard) -->
+				<div class="flashcard">
+    				<!-- Flashcard content (question and answer) goes here -->
+    				<div class="question">
+        				<!-- The question will always be visible -->
+        				<h2 class="question-text">Flashcard Question</h2>
+    				</div>
+    				<div class="answer">
+        				<!-- The answer will be hidden initially -->
+        				<h2 class="answer-text">Flashcard Answer</h2>
+        				<!-- Correct placement of the keywordContainer element inside the .answer div -->
+       				 <div id="keywordContainer"></div>
+    				</div>
+    				<!-- Timer div goes here -->
+    				<div id="timer">Time Remaining: <span id="timeRemaining">10</span> seconds</div>
+    				<div id="timeUpMessage" style="display: none;">Time's up! Marking answer as incorrect.</div>
+				</div>
+
+        </div>
+        <div class="zone-right">
+            <!-- Zone 3 content goes here -->
+            <div class="output-box">
+                <!-- Voice output box -->
+                <h2></h2>
+                <p id="voiceOutput"></p>
+            </div>
+                    <!-- New div to display the result -->
+        <div class="output-box" id="resultContainer"></div>
+        </div>
+    </div>
+    
+
+</main>
+
+
+    <div class="zone-1">
+        <!-- Zone 1 content (buttons) goes here -->
+        <div class="zone-1-buttons">
+            <button id="moreInfoBtn">More info</button>
+            <button id="previousBtn">Previous</button>
+            <button id="flipBtn">Flip</button>
+            <button id="nextBtn">Next</button>
+            <button id="speakAnswerBtn">Speak answer</button>
+    			<button id="markAnswerBtn" onclick="markAnswer()" disabled>Mark answer</button>
+        </div>
+        
+    </div>
+    <footer>
+        <p>&copy; 2023 Master Medical</p>
+    </footer>
+    
+    <div class="overlay">
+    <div class="overlay-content">
+        <span class="close-btn" onclick="closeOverlay()">&times;</span>
+        <p id="overlayText"></p>
+    </div>
+</div> 
+<script src="https://raw.githack.com/mastermedical/multipage/main/Javascript.js"></script>   
+</body>
+</html>
