@@ -30,13 +30,14 @@
         }
         
         .zone-1 {
-	    position: fixed;
-	    bottom: 0;
-	    left: 0;
-	    right: 0;
+	position: fixed;
+	bottom: 100px;
+	left: 0;
+	right: 0;
+	padding: 10px; 
+	border-top: 1px solid #ccc;           
             height: 10%;
             background-color: #2ecc71; /* Change the background color for Zone 1 */
-            display: flex;
             justify-content: space-around;
             align-items: center;
             /* Optional: Add additional styles for the navigation buttons */
