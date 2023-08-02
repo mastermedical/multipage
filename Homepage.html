@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACES Faces - Home</title>
+    <link rel="stylesheet" href="https://raw.githack.com/mastermedical/multipage/main/Cardiology CSS Styles.css"> <!-- Your CSS file -->
+    <script src="Javascript.js">
+    </script>
+
+</head>
+<body>
+    <header>
+        <h1>PACES Faces</h1>
+        <div class="dropdown-menu">
+            <button id="dropdownBtn">&#9776;</button>
+            <div class="dropdown-content">
+                <!-- Links to different medical system pages -->
+                <a href="#" onclick="toggleDarkMode()">Dark Mode</a>
+                <a href="Cardiology.html">Cardiology</a>
+                <a href="respiratory.html">Respiratory</a>
+                <!-- Add links to other medical systems -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="icon-box">
+            <a href="Cardiology.html">
+                <img src="https://github.com/mastermedical/flash/raw/main/cardiology.png" alt="Cardiology Icon">
+                <p>Cardiology</p>
+            </a>
+        </div>
+        <div class="icon-box">
+            <a href="respiratory.html">
+                <img src="lung-icon.png" alt="Respiratory Icon">
+                <p>Respiratory</p>
+            </a>
+        </div>
+        <!-- Add more icon-box elements for other medical systems -->
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Master Medical</p>
+    </footer>
+    
+<script>
+
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+}
+</script>
+
+</body>
+</html>
