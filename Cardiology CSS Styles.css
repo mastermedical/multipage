@@ -1,0 +1,267 @@
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            flex: 1; /* Fill remaining space between header and footer */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .zone-container {
+            flex: 1; /* Fill remaining space in the main content area */
+            display: flex;
+            flex-direction: row;
+            border-top: 1px solid #ccc; /* Optional: Add a border between zones 2 and 3 */
+        }
+        
+        .zone-1 {
+            height: 10%;
+            background-color: #2ecc71; /* Change the background color for Zone 1 */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* Optional: Add additional styles for the navigation buttons */
+        }
+        
+        /* Updated styles for the buttons container */
+			.zone-1-buttons {
+    		width: 80%;
+    		display: flex;
+    		justify-content: space-between;
+		  }
+		  
+		  /* Updated styles for the buttons */
+			button {
+    		font-size: 2vw; /* Responsive font size based on viewport width */
+    		padding: 1.5vw 2vw; /* Responsive padding based on viewport width */
+    		border: none;
+    		color: black; /* Text color set to black */
+    		cursor: pointer;
+    		background-image: linear-gradient(#e6f7ff, #ccc); /* Gradient background */
+    		max-width: 20%; /* Set maximum button width to 20% of the parent element (zone 1) */
+			}
+
+		 	/* Set maximum font size for buttons to 20 pixels */
+			@media (min-width: 1000px) {
+    			button {
+        			font-size: 20px;
+    			}
+			}
+
+			/* Hover effect for buttons */
+			button:hover {
+    		background-image: linear-gradient(#b3e0ff, #b3b3b3); /* Lighter gradient on hover */
+			}
+
+        .zone-left {
+            flex: 1; /* Occupy half of the zone-container (50%) */
+            background-color: #f1f1f1; /* Optional: Add background color to differentiate zones */
+            padding: 1rem;
+        }
+
+        .zone-right {
+            flex: 1; /* Occupy half of the zone-container (50%) */
+            background-color: #f9f9f9; /* Optional: Add background color to differentiate zones */
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+    			align-items: center;
+        }
+        
+        .output-box {
+    			width: 100%;
+    			max-width: 500px; /* Set a maximum width for the output box */
+    			margin: 0 auto; /* Center the output box horizontally */
+    			padding: 1rem;
+    			border: 1px solid #ccc;
+    			border-radius: 5px;
+    			background-color: #fff;
+    			font-size: 1.6rem;
+    			color: black;
+		 }
+
+        footer {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        /* Flashcard styles */
+        .flashcard {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px; /* Adjust as needed */
+            max-height: 100%;
+            overflow: auto;
+        }
+        
+        /* Update to make questions larger and bolded */
+        .question {
+            font-size: 16px; /* Adjust the font size as needed */
+            font-weight: bold;
+        }
+
+        /* Hide the answer initially */
+        .answer {
+            display: none;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        
+        /* Style for the overlay box */
+    	 .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+   	  .overlay-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 80%;
+    }
+
+   	  .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    /* Styles for the drop-down menu */
+			.dropdown-menu {
+    		position: absolute;
+    		top: 50%; /* Change this to 50% to vertically center the menu */
+    		right: 1rem; /* Change this to set the menu position to the far right */
+   		 transform: translateY(-50%); /* Vertically center the menu using translateY */
+   		 display: inline-block;
+    		margin-right: 10px;
+	}
+
+		/* Style the drop-down button */
+		#dropdownBtn {
+    		background: none;
+    		border: none;
+    		font-size: 24px;
+    		cursor: pointer;
+}
+
+		/* Style the drop-down content (the options) */
+		.dropdown-content {
+    		display: none;
+    		position: absolute;
+    		top: 100%;
+    		right: 0;
+    		background-color: #f9f9f9;
+    		min-width: 160px;
+    		padding: 12px 16px;
+    		z-index: 1;
+    		border-radius: 5px;
+    		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+		/* Show the drop-down content when the drop-down button is hovered over */
+		.dropdown-menu:hover .dropdown-content {
+    		display: block;
+}
+
+/* Styles for dark mode */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode header {
+    background-color: #222;
+}
+
+body.dark-mode .zone-container {
+    border-top-color: #555;
+}
+
+body.dark-mode .zone-left {
+    background-color: #444;
+}
+
+body.dark-mode .zone-right {
+    background-color: #555;
+}
+
+body.dark-mode .zone-1 {
+	background-color: #3f3e40;
+}
+
+body.dark-mode #dropdownBtn {
+    color: #fff; /* Set the color to white in dark mode */
+}
+
+        /* Position the dropdown menu button in the top right corner of the header */
+        header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: relative; /* Add this line to set the header position to relative */
+}
+
+        .dropdown-menu-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    
+    	/* Set initial font size for the flashcard text (question and answer) */
+.flashcard h2, .flashcard p {
+    font-size: 4vw; /* Responsive font size based on viewport width */
+}
+
+/* Set maximum and minimum font size for the flashcard text */
+@media (max-width: 600px) {
+    .flashcard h2, .flashcard p {
+        font-size: 16px; /* Minimum font size of 16 pixels */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+    /* Interpolate font size between 16px and 24px based on screen width */
+    .flashcard h2, .flashcard p {
+        font-size: calc(16px + 8 * ((100vw - 600px) / 400)); /* Gradient font size */
+    }
+}
+
+@media (min-width: 1001px) {
+    .flashcard h2, .flashcard p {
+        font-size: 24px; /* Maximum font size of 24 pixels */
+    }
+}
+
+    </style>
