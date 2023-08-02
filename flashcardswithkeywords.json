@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "answer": "Paris",
+    "keywords": ["Paris"],
+    "moreInfo": "Paris is the capital and largest city of France."
+  },
+  {
+    "question": "What is 2 + 2?",
+    "answer": "4",
+    "keywords": ["4", "four"],
+    "moreInfo": "Two plus two equals four."
+  },
+  {
+    "question": "What is the chemical symbol for water?",
+    "answer": "H2O",
+    "keywords": ["H2O"],
+    "moreInfo": "The chemical symbol for water is H2O, indicating two hydrogen atoms and one oxygen atom."
+  },
+  {
+    "question": "Who wrote the play 'Romeo and Juliet'?",
+    "answer": "William Shakespeare",
+    "keywords": ["William Shakespeare"],
+    "moreInfo": "The play 'Romeo and Juliet' was written by the renowned playwright William Shakespeare. It is one of his most famous and tragic works."
+  },
+  {
+    "question": "What is cardiac output?",
+    "answer": "Cardiac output is the quantity of blood pumped into the aorta each minute by the heart.",
+    "keywords": ["quantity of blood", "pumped", "out the heart", "into the aorta", "each minute"],
+    "moreInfo": "Cardiac index increases approximately in proportion to the surface area of the body and reaches a peak age 10, gradually declining thereafter."
+  }
+]
