@@ -23,7 +23,7 @@
   }
 
   // Fetch the flashcard data from the JSON file on GitHub
-  fetch('https://raw.githubusercontent.com/mastermedical/flash/main/flashcardswithkeywords.json')
+  fetch('https://raw.githubusercontent.com/mastermedical/multipage/main/flashcardswithkeywords.json')
     .then((response) => response.json())
     .then((data) => {
       flashcardData = data; // Store the fetched data in the flashcardData variable
