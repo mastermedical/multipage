@@ -1,0 +1,109 @@
+    <style>
+        /* Reset some default styles and set a common background color */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown-menu:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Main content styles */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .icon-box {
+            width: 200px;
+            margin: 1rem;
+            padding: 1rem;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .icon-box img {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Dark mode styles (add these if needed) */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        body.dark-mode header {
+    			background-color: #222; /* Adjust header background color for dark mode */
+			}
+			
+		  body.dark-mode footer {
+		  		background-color: #3f3e40
+		  	}
+        
+        body.dark-mode .icon-box {
+    			background-color: #444; /* Adjust icon box background color for dark mode */
+    			border-color: #555; /* Adjust icon box border color for dark mode */
+			}
+			
+			body.dark-mode #dropdownBtn {
+    			color: #fff; /* Set the color to white in dark mode */
+			}
+
+        /* You can add more dark mode styles for specific elements as needed */
+    </style>
